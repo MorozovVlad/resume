@@ -1,0 +1,133 @@
+// Основные стили для шапки
+
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Montserrat:wght@200;400;500&family=Noto+Serif:wght@900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #000428, #000744);
+  font-family: "Jura", serif;
+  background-size: 400% 400%;
+  animation: gradient 7s ease infinite;
+}
+@keyframes gradient {
+  0% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 50% 30%;
+  }
+  100% {
+    background-position: 50% 0%;
+  }
+}
+header {
+  display: flex;
+  align-items: center;
+  padding-top: 2rem;
+  //   background-color: #f8f9fa;
+  //   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: absolute; // Для позиционирования навигации
+  // height: 20vh;
+  width: 100%;
+
+  // Логотип
+
+  // Навигация
+  nav {
+    display: flex;
+    gap: 1.5rem; // Расстояние между кнопками
+    position: absolute; // Абсолютное позиционирование
+    left: 50%; // Сдвигаем на 50% вправо
+    transform: translateX(-50%); // Центрируем
+    transition: all 0.5s ease;
+    // font-size: 16px;
+    .link {
+      text-decoration: none;
+      color: rgb(102, 217, 237);
+      font-size: 1.2rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #007bff;
+        text-shadow: 0 0 8px rgba(102, 217, 237, 0.8);
+      }
+    }
+  }
+  nav.to-left {
+    position: fixed;
+    top: 20vh;
+    left: 5vw;
+    right: auto;
+    transform: translateX(0);
+    flex-direction: column;
+    width: 10vw;
+  }
+}
+main {
+  display: flex;
+  flex-direction: column; // Элементы внутри main будут в колонке
+  justify-content: center; // Вертикальное центрирование
+  align-items: center; // Горизонтальное центрирование
+  height: 100vh; // Занимаем всю высоту экрана
+  z-index: -2;
+  // top: 0px;
+  text-align: center; // Текст по центру
+
+  // Стили для h1
+  h1 {
+    font-size: 5rem; // Размер шрифта
+    margin: 0; // Убираем отступы
+    color: rgb(102, 217, 237); // Цвет текста
+  }
+
+  // Стили для h2
+  h2 {
+    font-size: 3rem; // Размер шрифта
+    margin: 0.5rem 0 0; // Отступ сверху и убираем отступы снизу
+    color: rgb(102, 217, 237); // Цвет текста
+  }
+}
+.work {
+  position: absolute;
+  height: 100vh;
+  display: grid;
+  left: 17.5vw;
+  width: 65vw;
+  grid-template-columns: repeat(2, 30vw);
+  gap: 5vw;
+  .container {
+    margin-top: 30px;
+    height: 420px;
+    // background-color: #030938;
+    // -webkit-backdrop-filter: blur(10px);
+    // backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    color: rgb(102, 217, 237);
+    font-size: 1.2rem;
+    font-weight: 500;
+    position: relative;
+    box-shadow: rgba(102, 217, 237, 0.3) 0px 4px 14px 0px;
+    img {
+      display: block;
+      margin: 0 auto;
+      height: 15%;
+    }
+    .logos {
+      display: flex;
+      bottom: 0;
+      position: absolute;
+      width: 90%;
+      padding: 20px;
+
+      img {
+        height: 7vh;
+      }
+    }
+  }
+}
