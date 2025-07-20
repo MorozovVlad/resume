@@ -4,22 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
-    <!-- <script src="./js.js"></script> -->
+    <title>Vlad Morozov</title>
   </head>
   <body>
     <header>
       <nav>
         <a href="#" class="link">Главная</a>
         <a href="#work" class="link">Опыт работы</a>
-        <a href="#" class="link">Услуги</a>
-        <a href="#" class="link">Портфолио</a>
-        <a href="#" class="link">Контакты</a>
+        <a href="#projects" class="link">Примеры проектов</a>
+        <a href="#education" class="link">Образование</a>
       </nav>
     </header>
     <main>
-      <h1>Vlad Morozov</h1>
-      <h2>Front End Engineer</h2>
+      <h1 class="neon">Vlad Morozov</h1>
+      <h2 class="neon">Front End Engineer</h2>
+      <div class="contacts">
+        <img src="./static/telegram-logo.svg" />
+        <img src="./static/linkedin-logo.svg" />
+        <img src="./static/github-logo.svg" />
+        <img src="./static/codewars-logo.svg" />
+        <img src="./static/leetcode-logo.png" />
+      </div>
     </main>
     <div class="work" id="work">
       <div class="container">
@@ -54,6 +59,48 @@
           <img src="./static/mariadb-logo.svg" />
           <img src="./static/git-logo.svg" />
         </div>
+      </div>
+    </div>
+    <div class="projects" id="projects">
+      <a href="https://game-gthe.vercel.app/">
+        <div class="container">
+          <img src="./static/arcanoid.jpg" />
+          <h3>Игра Арканоид на движке Phaser</h3>
+          <div class="logos">
+            <img src="./static/js-logo.svg" />
+            <img src="./static/phaser-logo.svg" style="height: 5.5vh" />
+          </div>
+        </div>
+      </a>
+      <a href="https://notes-app-vcu4.vercel.app/home">
+        <div class="container">
+          <img src="./static/notes.jpg" />
+          <h3>TODO List</h3>
+          <div class="logos">
+            <img src="./static/react-logo.svg" />
+            <img src="./static/tailwind-logo.svg" />
+          </div>
+        </div>
+      </a>
+      <a href="https://envizhen-shyf.vercel.app/">
+        <div class="container">
+          <img src="./static/lend.jpg" />
+          <h3>Пример верстки лендинга</h3>
+          <div class="logos">
+            <img src="./static/html-logo.svg" />
+            <img src="./static/scss-logo.svg" />
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="education" id="education">
+      <div class="container">
+        <h3>
+          Гомельский государственный технический университет им. П.О. Сухого
+        </h3>
+        <p>Факультет автоматизированных и информационных систем</p>
+        <p>Информационные системы и технологии</p>
+        <p>2018-2022</p>
       </div>
     </div>
     <script src="./js.js"></script>

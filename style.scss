@@ -7,22 +7,22 @@ html {
 
 body {
   margin: 0;
-  background: linear-gradient(180deg, #000428, #000744);
+  background: linear-gradient(180deg, #060b27, #001e3b);
   font-family: "Jura", serif;
-  background-size: 400% 400%;
-  animation: gradient 7s ease infinite;
+  background-size: 500% 500%;
+  // animation: gradient 7s ease infinite;
 }
-@keyframes gradient {
-  0% {
-    background-position: 50% 0%;
-  }
-  50% {
-    background-position: 50% 30%;
-  }
-  100% {
-    background-position: 50% 0%;
-  }
-}
+// @keyframes gradient {
+//   0% {
+//     background-position: 50% 0%;
+//   }
+//   50% {
+//     background-position: 50% 30%;
+//   }
+//   100% {
+//     background-position: 50% 0%;
+//   }
+// }
 header {
   display: flex;
   align-items: center;
@@ -84,11 +84,37 @@ main {
     color: rgb(102, 217, 237); // Цвет текста
   }
 
+  .neon {
+    font-size: 4rem;
+    color: rgb(102, 217, 237);
+    text-shadow: 0 0 1px #2200b9, 0 0 3px #2200b9, 0 0 5px #2200b9,
+      0 0 10px #2200b9, 0 0 20px #2200b9;
+    animation: glow 1s infinite alternate;
+  }
+  @keyframes glow {
+    0% {
+      text-shadow: 0 0 1px #2801d7, 0 0 2px #2801d7, 0 0 5px #2801d7,
+        0 0 10px #2801d7, 0 0 20px #2801d7;
+    }
+    100% {
+      text-shadow: 0 0 1px #1b0094, 0 0 2px #1b0094, 0 0 3px #1b0094,
+        0 0 5px #1b0094, 0 0 10px #1b0094;
+    }
+  }
+
   // Стили для h2
   h2 {
     font-size: 3rem; // Размер шрифта
     margin: 0.5rem 0 0; // Отступ сверху и убираем отступы снизу
     color: rgb(102, 217, 237); // Цвет текста
+  }
+  .contacts {
+    display: flex;
+    margin: 40px;
+    gap: 10px;
+    img {
+      height: 6vh;
+    }
   }
 }
 .work {
@@ -129,5 +155,76 @@ main {
         height: 7vh;
       }
     }
+  }
+}
+.projects {
+  a {
+    text-decoration: none;
+  }
+  top: 200vh;
+  position: absolute;
+  height: 100vh;
+  display: grid;
+  left: 17.5vw;
+  width: 65vw;
+  grid-template-columns: repeat(3, 20vw);
+  gap: 2.5vw;
+  .container {
+    margin-top: 30px;
+    height: 420px;
+    // background-color: #030938;
+    // -webkit-backdrop-filter: blur(10px);
+    // backdrop-filter: blur(10px);
+    border-radius: 20px;
+    // padding: 20px;
+    text-align: center;
+    color: rgb(102, 217, 237);
+    font-size: 1.2rem;
+    font-weight: 500;
+    position: relative;
+    box-shadow: rgba(102, 217, 237, 0.3) 0px 4px 14px 0px;
+    img {
+      width: 100%;
+      border-radius: 20px 20px 0 0;
+    }
+    h3 {
+      padding: 20px;
+      text-decoration: none;
+    }
+    .logos {
+      display: flex;
+      bottom: 0;
+      position: absolute;
+      width: 90%;
+      padding: 10px;
+
+      img {
+        height: 7vh;
+        border-radius: 0%;
+      }
+    }
+  }
+}
+.education {
+  top: 300vh;
+  position: absolute;
+  height: 50vh;
+  left: 17.5vw;
+  width: 65vw;
+  .container {
+    margin-top: 30px;
+    height: 220px;
+    padding: 20px;
+    // background-color: #030938;
+    // -webkit-backdrop-filter: blur(10px);
+    // backdrop-filter: blur(10px);
+    border-radius: 20px;
+    // padding: 20px;
+    text-align: center;
+    color: rgb(102, 217, 237);
+    font-size: 1.2rem;
+    font-weight: 500;
+    position: relative;
+    box-shadow: rgba(102, 217, 237, 0.3) 0px 4px 14px 0px;
   }
 }
