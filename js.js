@@ -2,12 +2,15 @@ const nav = document.querySelector("nav");
 
 window.addEventListener("scroll", () => {
   const scrollTop = window.scrollY || document.documentElement.scrollTop;
-
+  const isMobile = window.innerWidth <= 768;
   if (scrollTop === 0) {
-    // в самом верху — меню сверху
     nav.classList.remove("to-left");
+    nav.classList.remove("hidden");
   } else {
-    // скролл хотя бы на 1px — меню уходит влево
-    nav.classList.add("to-left");
+    if (isMobile) {
+      nav.classList.add("hidden");
+    }else{
+      nav.classList.add("to-left");
+    }    
   }
 });
