@@ -246,6 +246,7 @@ main .contacts img {
     padding-right: 7px;
   }
   .work .slider-wrapper .work-grid .container .logos {
+    margin-top: 10px;
     padding: 10px;
   }
   .work .slider-wrapper .work-grid .container .logos img {
@@ -285,6 +286,7 @@ main .contacts img {
   }
   .projects .slider-wrapper .projects-wrap .container .logos {
     padding: 0;
+    margin-top: 10px;
     padding-bottom: 20px;
   }
   .projects .slider-wrapper .projects-wrap .container .logos img {
@@ -297,6 +299,7 @@ main .contacts img {
     width: 94vw;
     top: 275vh;
     height: 45vh;
+    margin-bottom: 10px;
   }
   .education .container {
     padding: 5px;
