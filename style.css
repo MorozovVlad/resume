@@ -241,6 +241,9 @@ main .contacts img {
     scroll-snap-align: start;
     flex: 0 0 80vw;
   }
+  .work .slider-wrapper .work-grid .container img {
+    margin-top: 10px;
+  }
   .work .slider-wrapper .work-grid .container p {
     padding-left: 7px;
     padding-right: 7px;

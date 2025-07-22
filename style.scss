@@ -247,6 +247,9 @@ main {
           height: 55vh;
           scroll-snap-align: start;
           flex: 0 0 80vw;
+          img{
+            margin-top: 10px;
+          }
           p{
             padding-left: 7px;
             padding-right: 7px;
