@@ -1,119 +1,452 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Vlad Morozov</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <a href="#" class="link">Главная</a>
-        <a href="#work" class="link">Опыт работы</a>
-        <a href="#projects" class="link">Примеры проектов</a>
-        <a href="#education" class="link">Образование</a>
-      </nav>
-    </header>
-    <main>
-      <h1 class="neon">Vlad Morozov</h1>
-      <h2 class="neon">Front End Engineer</h2>
-      <div class="contacts">
-        <a href="http://t.me/@m_uladzislau"><img src="./static/telegram-logo.svg" /></a> 
-        <a href="https://www.linkedin.com/in/vladislav-morozov-36b676228/"><img src="./static/linkedin-logo.svg" /></a>
-        <a href="https://github.com/MorozovVlad"><img src="./static/github-logo.svg" /></a>
-        <a href="https://www.codewars.com/users/MorozovVlad"><img src="./static/codewars-logo.svg" /></a>
-        <a href="https://leetcode.com/u/MorozovVlad/"><img src="./static/leetcode-logo.png" /></a>
-      </div>
-    </main>
-    <div class="work" id="work">
-      <h2>Опыт работы</h2>
-      <div class="slider-wrapper">
-        <div class="work-grid">
-          <div class="container">
-            <img src="./static/logo-footer.png" />
-            <h3>ОАО "СЦКК"</h3>
-            <p>инженер-программист</p>
-            <p>
-              Разработано веб приложение учета лабораторных анализов (React,
-              express) <br />Разработаны телеграмм боты для мониторинга работы производства
-              (telegraf js). <br />Работа с базами данных на python (MS SQL,
-              PostgreSQL).
-            </p>
-            <div class="logos">
-              <img src="./static/react-logo.svg" />
-              <img src="./static/python-logo.svg" />
-              <img src="./static/postgresql-logo.svg" />
-              <img src="./static/git-logo.svg" />
-            </div>
-          </div>
-        
-          <div class="container">
-            <img src="./static/vipo.svg" />
-            <h3>ЧУП "Витстройтехмаш"</h3>
-            <p>инженер-программист</p>
-            <p>
-              Разработано веб приложение управления рабочими процессами предприятия
-              (React, Redux, Django)
-            </p>
-            <div class="logos">
-              <img src="./static/react-logo.svg" />
-              <img src="./static/redux-logo.svg" />
-              <img src="./static/django-logo.svg" />
-              <img src="./static/mariadb-logo.svg" />
-              <img src="./static/git-logo.svg" />
-            </div>
-          </div>
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Vlad Morozov — Front End Engineer. Опыт работы, проекты и образование."
+        />
+        <meta name="color-scheme" content="dark" />
+        <meta name="theme-color" content="#040714" />
+        <link rel="icon" type="image/svg+xml" href="./static/favicon.svg" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Vlad Morozov — Front End Engineer</title>
+    </head>
+    <body>
+        <div class="backdrop" aria-hidden="true">
+            <div class="backdrop__grid"></div>
+            <div class="backdrop__glow backdrop__glow--cyan"></div>
+            <div class="backdrop__glow backdrop__glow--mint"></div>
+            <div class="backdrop__glow backdrop__glow--blue"></div>
         </div>
-      </div>
-    </div>
-    <div class="projects" id="projects">
-      <h2>Примеры проектов</h2>
-      <div class="slider-wrapper">
-        <div class="projects-wrap">
-          <a href="https://game-gthe.vercel.app/">
-            <div class="container">
-              <img src="./static/arcanoid.jpg" />
-              <h3>Игра Арканоид на движке Phaser</h3>
-              <div class="logos">
-                <img src="./static/js-logo.svg" />
-                <img src="./static/phaser-logo.svg" style="height: 5.5vh" />
-              </div>
-            </div>
-          </a>
-          <a href="https://notes-app-vcu4.vercel.app/home">
-            <div class="container">
-              <img src="./static/notes.jpg" />
-              <h3>TODO List</h3>
-              <div class="logos">
-                <img src="./static/react-logo.svg" />
-                <img src="./static/tailwind-logo.svg" />
-              </div>
-            </div>
-          </a>
-          <a href="https://envizhen-shyf.vercel.app/">
-            <div class="container">
-              <img src="./static/lend.jpg" />
-              <h3>Пример верстки лендинга</h3>
-              <div class="logos">
-                <img src="./static/html-logo.svg" />
-                <img src="./static/scss-logo.svg" />
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="education" id="education">
-      <div class="container">
-        <h3>
-          Гомельский государственный технический университет им. П.О. Сухого
-        </h3>
-        <p>Факультет автоматизированных и информационных систем</p>
-        <p>Информационные системы и технологии</p>
-        <p>2018-2022</p>
-      </div>
-    </div>
-    <script src="./js.js"></script>
-  </body>
+
+        <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+        <header class="site-header">
+            <a
+                class="header-cta"
+                href="http://t.me/@m_uladzislau"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Связаться <span aria-hidden="true">↗</span>
+            </a>
+        </header>
+
+        <nav class="site-nav" aria-label="Основная навигация">
+            <a
+                class="site-nav__link is-active"
+                href="#home"
+                aria-current="location"
+                >Главная</a
+            >
+            <a class="site-nav__link" href="#work">Опыт работы</a>
+            <a class="site-nav__link" href="#projects">Проекты</a>
+            <a class="site-nav__link" href="#education">Образование</a>
+        </nav>
+
+        <main>
+            <section class="hero" id="home">
+                <h1 class="hero__title">Vlad Morozov</h1>
+                <h2 class="hero__role">Front End Engineer</h2>
+
+                <div class="contacts" aria-label="Контакты">
+                    <a
+                        class="contacts__link"
+                        href="http://t.me/@m_uladzislau"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Telegram"
+                        title="Telegram"
+                    >
+                        <img src="./static/telegram-logo.svg" alt="" />
+                    </a>
+                    <a
+                        class="contacts__link"
+                        href="https://www.linkedin.com/in/vladislav-morozov-36b676228/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn"
+                        title="LinkedIn"
+                    >
+                        <img src="./static/linkedin-logo.svg" alt="" />
+                    </a>
+                    <a
+                        class="contacts__link"
+                        href="https://github.com/MorozovVlad"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub"
+                        title="GitHub"
+                    >
+                        <img src="./static/github-logo.svg" alt="" />
+                    </a>
+                    <a
+                        class="contacts__link"
+                        href="https://www.codewars.com/users/MorozovVlad"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Codewars"
+                        title="Codewars"
+                    >
+                        <img src="./static/codewars-logo.svg" alt="" />
+                    </a>
+                    <a
+                        class="contacts__link"
+                        href="https://leetcode.com/u/MorozovVlad/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LeetCode"
+                        title="LeetCode"
+                    >
+                        <img src="./static/leetcode-logo.png" alt="" />
+                    </a>
+                </div>
+
+                <a
+                    class="hero__scroll"
+                    href="#work"
+                    aria-label="Перейти к опыту работы"
+                >
+                    <span class="hero__scroll-line" aria-hidden="true"></span>
+                </a>
+            </section>
+
+            <section class="section" id="work" aria-labelledby="work-title">
+                <div class="section__inner">
+                    <header class="section__head" data-reveal>
+                        <span class="section__index">01</span>
+                        <h2 id="work-title">Опыт работы</h2>
+                        <span class="section__line" aria-hidden="true"></span>
+                    </header>
+
+                    <div class="work-grid">
+                        <article class="card work-card" data-reveal>
+                            <div class="work-card__head">
+                                <div class="logo-plate">
+                                    <img
+                                        src="./static/logo-footer.png"
+                                        alt="Логотип ОАО «СЦКК»"
+                                    />
+                                </div>
+                                <div class="work-card__titles">
+                                    <h3>ОАО «СЦКК»</h3>
+                                    <p>Инженер-программист</p>
+                                </div>
+                            </div>
+
+                            <ul class="work-card__list">
+                                <li>
+                                    Разработано веб-приложение учёта
+                                    лабораторных анализов (React, Express)
+                                </li>
+                                <li>
+                                    Разработаны Telegram-боты для мониторинга
+                                    работы производства (Telegraf.js)
+                                </li>
+                                <li>
+                                    Работа с базами данных на Python (MS SQL,
+                                    PostgreSQL)
+                                </li>
+                            </ul>
+
+                            <div
+                                class="tech-row"
+                                aria-label="Использованные технологии"
+                            >
+                                <span class="tech-chip" title="React"
+                                    ><img
+                                        src="./static/react-logo.svg"
+                                        alt="React"
+                                /></span>
+                                <span class="tech-chip" title="JavaScript"
+                                    ><img
+                                        src="./static/javascript-logo.svg"
+                                        alt="JavaScript"
+                                /></span>
+                                <span class="tech-chip" title="Python"
+                                    ><img
+                                        src="./static/python-logo.svg"
+                                        alt="Python"
+                                /></span>
+                                <span class="tech-chip" title="PostgreSQL"
+                                    ><img
+                                        src="./static/postgresql-logo.svg"
+                                        alt="PostgreSQL"
+                                /></span>
+                                <span class="tech-chip" title="Git"
+                                    ><img src="./static/git-logo.svg" alt="Git"
+                                /></span>
+                            </div>
+                        </article>
+
+                        <article class="card work-card" data-reveal>
+                            <div class="work-card__head">
+                                <div class="logo-plate">
+                                    <img
+                                        src="./static/vipo.svg"
+                                        alt="Логотип ЧУП «Витстройтехмаш»"
+                                    />
+                                </div>
+                                <div class="work-card__titles">
+                                    <h3>ЧУП «Витстройтехмаш»</h3>
+                                    <p>Инженер-программист</p>
+                                </div>
+                            </div>
+
+                            <ul class="work-card__list">
+                                <li>
+                                    Разработано веб-приложение управления
+                                    рабочими процессами предприятия (React,
+                                    Redux, Django)
+                                </li>
+                                <li>
+                                    Разработано веб-приложение "Сервисная книга"
+                                    (Django)
+                                </li>
+                            </ul>
+
+                            <div
+                                class="tech-row"
+                                aria-label="Использованные технологии"
+                            >
+                                <span class="tech-chip" title="React"
+                                    ><img
+                                        src="./static/react-logo.svg"
+                                        alt="React"
+                                /></span>
+                                <span class="tech-chip" title="Redux"
+                                    ><img
+                                        src="./static/redux-logo.svg"
+                                        alt="Redux"
+                                /></span>
+                                <span class="tech-chip" title="Django"
+                                    ><img
+                                        src="./static/django-logo.svg"
+                                        alt="Django"
+                                /></span>
+                                <span class="tech-chip" title="MariaDB"
+                                    ><img
+                                        src="./static/mariadb-logo.svg"
+                                        alt="MariaDB"
+                                /></span>
+                                <span class="tech-chip" title="Git"
+                                    ><img src="./static/git-logo.svg" alt="Git"
+                                /></span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section
+                class="section"
+                id="projects"
+                aria-labelledby="projects-title"
+            >
+                <div class="section__inner">
+                    <header class="section__head" data-reveal>
+                        <span class="section__index">02</span>
+                        <h2 id="projects-title">Примеры проектов</h2>
+                        <span class="section__line" aria-hidden="true"></span>
+                    </header>
+
+                    <div class="projects-grid">
+                        <a
+                            class="card project-card"
+                            href="https://nazare.by/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            data-reveal
+                        >
+                            <div class="project-card__media">
+                                <img
+                                    src="./static/nazare.png"
+                                    alt="Скриншот сайта парк-отеля NAZARE"
+                                    loading="lazy"
+                                />
+                                <span class="project-card__cta"
+                                    >Открыть проект
+                                    <span aria-hidden="true">↗</span></span
+                                >
+                                <span
+                                    class="project-card__arrow"
+                                    aria-hidden="true"
+                                    >↗</span
+                                >
+                            </div>
+                            <div class="project-card__body">
+                                <h3>Сайт Парк отеля NAZARE</h3>
+                                <div
+                                    class="tech-row"
+                                    aria-label="Использованные технологии"
+                                >
+                                    <span class="tech-chip" title="Django"
+                                        ><img
+                                            src="./static/django-logo.svg"
+                                            alt="Django"
+                                    /></span>
+                                    <span class="tech-chip" title="Python"
+                                        ><img
+                                            src="./static/python-logo.svg"
+                                            alt="Python"
+                                    /></span>
+                                    <span class="tech-chip" title="Git"
+                                        ><img
+                                            src="./static/git-logo.svg"
+                                            alt="Git"
+                                    /></span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a
+                            class="card project-card"
+                            href="https://service-new.agpvipo.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            data-reveal
+                        >
+                            <div class="project-card__media">
+                                <img
+                                    src="./static/serv.png"
+                                    alt="Скриншот приложения «Сервисная книга»"
+                                    loading="lazy"
+                                />
+                                <span class="project-card__cta"
+                                    >Открыть проект
+                                    <span aria-hidden="true">↗</span></span
+                                >
+                                <span
+                                    class="project-card__arrow"
+                                    aria-hidden="true"
+                                    >↗</span
+                                >
+                            </div>
+                            <div class="project-card__body">
+                                <h3>Сервисная книга</h3>
+                                <div
+                                    class="tech-row"
+                                    aria-label="Использованные технологии"
+                                >
+                                    <span class="tech-chip" title="Django"
+                                        ><img
+                                            src="./static/django-logo.svg"
+                                            alt="Django"
+                                    /></span>
+                                    <span class="tech-chip" title="Python"
+                                        ><img
+                                            src="./static/python-logo.svg"
+                                            alt="Python"
+                                    /></span>
+                                    <span class="tech-chip" title="Git"
+                                        ><img
+                                            src="./static/git-logo.svg"
+                                            alt="Git"
+                                    /></span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <article
+                            class="card project-card project-card--static"
+                            data-reveal
+                        >
+                            <div class="project-card__media">
+                                <img
+                                    src="./static/vstm.png"
+                                    alt="Скриншот веб-приложения управления рабочими процессами предприятия"
+                                    loading="lazy"
+                                />
+                            </div>
+                            <div class="project-card__body">
+                                <h3>
+                                    Веб-приложение управления рабочими
+                                    процессами предприятия
+                                </h3>
+                                <div
+                                    class="tech-row"
+                                    aria-label="Использованные технологии"
+                                >
+                                    <span class="tech-chip" title="React"
+                                        ><img
+                                            src="./static/react-logo.svg"
+                                            alt="React"
+                                    /></span>
+                                    <span class="tech-chip" title="Redux"
+                                        ><img
+                                            src="./static/redux-logo.svg"
+                                            alt="Redux"
+                                    /></span>
+                                    <span class="tech-chip" title="Django"
+                                        ><img
+                                            src="./static/django-logo.svg"
+                                            alt="Django"
+                                    /></span>
+                                    <span class="tech-chip" title="Python"
+                                        ><img
+                                            src="./static/python-logo.svg"
+                                            alt="Python"
+                                    /></span>
+                                    <span class="tech-chip" title="MySQL"
+                                        ><img
+                                            src="./static/mysql-logo.svg"
+                                            alt="MySQL"
+                                    /></span>
+                                    <span class="tech-chip" title="Git"
+                                        ><img
+                                            src="./static/git-logo.svg"
+                                            alt="Git"
+                                    /></span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section
+                class="section"
+                id="education"
+                aria-labelledby="education-title"
+            >
+                <div class="section__inner">
+                    <header class="section__head" data-reveal>
+                        <span class="section__index">03</span>
+                        <h2 id="education-title">Образование</h2>
+                        <span class="section__line" aria-hidden="true"></span>
+                    </header>
+
+                    <article class="card education-card" data-reveal>
+                        <div class="logo-plate education-card__logo">
+                            <img
+                                src="./static/gstu-logo.png"
+                                alt="Логотип ГГТУ им. П.О. Сухого"
+                            />
+                        </div>
+                        <div class="education-card__body">
+                            <h3>
+                                Гомельский государственный технический
+                                университет им. П.О. Сухого
+                            </h3>
+                            <p>
+                                Факультет автоматизированных и информационных
+                                систем
+                            </p>
+                            <p>Информационные системы и технологии</p>
+                        </div>
+                        <span class="education-card__years">2018 — 2022</span>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>© <span id="year">2026</span> Vlad Morozov</p>
+            <a href="#home">Наверх <span aria-hidden="true">↑</span></a>
+        </footer>
+
+        <script src="./js.js"></script>
+    </body>
 </html>
