@@ -65,6 +65,63 @@ function requestScrollUpdate() {
 window.addEventListener("scroll", requestScrollUpdate, { passive: true });
 window.addEventListener("resize", requestScrollUpdate);
 
+/* ---------- Auto-hide scrollbar ---------- */
+
+const scrollbar = document.querySelector(".page-scrollbar");
+const scrollbarThumb = document.querySelector(".page-scrollbar__thumb");
+const SCROLLBAR_INSET = 8;
+const SCROLLBAR_HIDE_DELAY = 900;
+let scrollbarTimer;
+
+function updateScrollbar() {
+  if (!scrollbar || !scrollbarThumb) return;
+
+  const doc = document.documentElement;
+  const viewportHeight = window.innerHeight;
+  const trackHeight = viewportHeight - SCROLLBAR_INSET * 2;
+  const maxScroll = doc.scrollHeight - viewportHeight;
+
+  if (maxScroll <= 0) {
+    scrollbar.classList.remove("is-visible");
+    return;
+  }
+
+  const thumbHeight = Math.min(
+    trackHeight,
+    Math.max(36, Math.round(trackHeight * (viewportHeight / doc.scrollHeight))),
+  );
+  const travel = Math.max(0, trackHeight - thumbHeight);
+  const progress = Math.min(
+    Math.max(window.scrollY || doc.scrollTop, 0) / maxScroll,
+    1,
+  );
+
+  scrollbarThumb.style.height = `${thumbHeight}px`;
+  scrollbarThumb.style.transform = `translateY(${Math.round(progress * travel)}px)`;
+}
+
+function revealScrollbar() {
+  if (!scrollbar) return;
+
+  updateScrollbar();
+  scrollbar.classList.add("is-visible");
+  window.clearTimeout(scrollbarTimer);
+  scrollbarTimer = window.setTimeout(() => {
+    scrollbar.classList.remove("is-visible");
+  }, SCROLLBAR_HIDE_DELAY);
+}
+
+if (scrollbar) {
+  window.addEventListener("scroll", revealScrollbar, { passive: true });
+  window.addEventListener("resize", updateScrollbar);
+  window.addEventListener("load", updateScrollbar);
+  updateScrollbar();
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(updateScrollbar);
+  }
+}
+
 /* ---------- Active section ---------- */
 
 if (sections.length && "IntersectionObserver" in window) {

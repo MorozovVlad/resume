@@ -51,6 +51,49 @@ a:focus-visible {
   outline-offset: 4px;
 }
 
+/* ---------- Scrollbar ---------- */
+
+html {
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.page-scrollbar {
+  position: fixed;
+  top: 8px;
+  right: 2px;
+  bottom: 8px;
+  z-index: 80;
+  width: 10px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+
+  &.is-visible {
+    opacity: 1;
+  }
+}
+
+.page-scrollbar__thumb {
+  position: absolute;
+  top: 0;
+  left: 2px;
+  width: 6px;
+  min-height: 36px;
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    rgba(102, 217, 237, 0.55),
+    rgba(62, 230, 176, 0.42)
+  );
+  will-change: transform;
+}
+
 /* ---------- Decorative background ---------- */
 
 .backdrop {
@@ -1006,6 +1049,10 @@ a:focus-visible {
     scroll-padding-top: 20px;
   }
 
+  .page-scrollbar {
+    display: none;
+  }
+
   :root {
     --header-h: 64px;
   }
@@ -1199,6 +1246,7 @@ a:focus-visible {
 
 @media print {
   .backdrop,
+  .page-scrollbar,
   .scroll-progress,
   .site-header,
   .site-nav,
